@@ -2,7 +2,7 @@ import unicodedata
 
 class ExtractiveTextSummarization:
     def __init__(self, raw_text, n_sentences)  :
-        self.raw_text = raw_text
+        self.raw_text = raw_text.replace(".","۔")
         self.n_sentences = n_sentences
         
     def remove_stopwords(self, text_list, stop_words):
