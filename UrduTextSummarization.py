@@ -86,7 +86,7 @@ class ExtractiveTextSummarization:
             sent_dict = {}
             score = 0
             for j in i.split(" "):
-                if j not in sent_dict: # only unique words, is best strategy
+                if j not in sent_dict: # only unique words, is the best strategy
                     sent_dict[j] = word_freq[j]
                     score += word_freq[j]
             result_temp.append([sent_no, score, sent_dict])
