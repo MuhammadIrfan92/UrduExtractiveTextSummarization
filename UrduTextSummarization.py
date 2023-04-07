@@ -1,7 +1,5 @@
 import unicodedata
 
-
-
 class ExtractiveTextSummarization:
     def __init__(self, raw_text, n_sentences)  :
         self.raw_text = raw_text
@@ -56,16 +54,13 @@ class ExtractiveTextSummarization:
                     'کورے', 'عووهباً', 'ہوگیب', 'ًقطہ', 'هسترهہ', 'ہوتی', 'هڑے', 'لوگ', 'گروٍ', 'کوطي', 'عووهی', 'ہوًی', 'ًکبلٌب', 'هسطوش', 'ہوتے', 'هہرثبى', 'لوگوں',
                     'گروہوں', 'کوى', 'فرد', 'ہی', 'ًکتہ', 'هختلف', 'ہوچکب', 'هیرا', 'لڑکپي', 'گٌتی', 'کوًطب', 'فی', 'یقیٌباً', 'ًو', 'هسیذ', 'ہوچکی', 'هیری', 'لی', 'لازهباً',
                     'کوًطی', 'قجل', 'یقیٌی', 'ًوخواى', 'هطئلہ', 'ہوچکے', 'هیرے', 'لیب', 'ضت', 'ثبعث', 'ہورہی', 'ًئے', 'لیں', 'ہورہب', 'ًئی', 'لیٌب', 'لیے']
-        #text_list = process(raw_text, stop_words)
         
         """Creating Text List"""
         # create list having each sentence as element
         text_temp = self.raw_text.replace("\n", "۔")
         text_list = text_temp.split("۔")
 
-        
-        # remove punctuations from sentences
-        
+        # remove punctuations from sentences       
         for i in range(len(text_list)):
             if text_list[i] != '':
                 text_list[i] = ''.join(c for c in text_list[i] if unicodedata.category(c) != 'Po')
@@ -73,7 +68,6 @@ class ExtractiveTextSummarization:
         # Remove stopwords
         for i in range(len(text_list)):
             text_list[i] = self.remove_stopwords( text_list[i].split(" "), stop_words)
-            
             
         """Finding Word Frequencies"""
         word_freq = {}
