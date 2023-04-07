@@ -116,21 +116,5 @@ class ExtractiveTextSummarization:
         summary_sentences = []
         for i in indices:
             summary_sentences.append(raw_text_list[i])
-
-        
-        with open('result.txt', 'w') as file:
-            for i in summary_sentences:
-                file.write(f"{i}\n")
-        
+            
         return summary_sentences
-
-        
-
-with open('text.txt', 'r', encoding='utf-8') as file:
-    text = file.read()
-
-temp = ExtractiveTextSummarization(text, 4)
-temp.perform_ext_summarization()
-        
-    
-    
